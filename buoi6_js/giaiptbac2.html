@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Giải PT bậc 2 - JavaScript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function getdl()
+		{
+			var a= document.getElementById("txta").value;
+			var b= document.getElementById("txtb").value;
+			var c= document.getElementById("txtc").value;
+			var del=b*b-(4*a*c);
+			var z=(-c)/a;
+			if(a==0  )
+			{
+				else if(b==0)
+				{
+					alert("PT vô số nghiệm");
+				}
+				else 
+				{
+					alert("đây là pt bậc 1;nghiệm x="+z);
+				}
+				
+
+			}
+			else
+			{
+				
+			}
+
+
+		}
+	</script>
+	<div>
+
+	<form method="POST">
+		<h2>Giải phương trình bậc 2 </h2>
+		<table border="1" style="text-align: center; border-collapse: collapse;">
+			<tr>
+				<td><input type="text" name="" id="txta" size="3" placeholder="a "> x<sup>2</sup> + 
+					<input type="text" name="" id="txtb" size="3" placeholder="b "> x +
+					<input type="text" name="" id="txtc" size="3" placeholder="c "> = 0</td>
+			</tr>
+			<tr>
+				<td ><input type="button" name="" value="Giải" onclick="getdl()"></td>
+			</tr>
+			<tr>
+				<td>Kết quả : </td>
+				<td id="kq">
+					<script type="text/javascript">document.write("")</script>
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+</body>
+</html>
