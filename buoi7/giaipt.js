@@ -1,5 +1,29 @@
 function getdl()
 		{
+			if(txta.value=="" && txtb.value=="" && txtc.value=="")
+    		{
+	    		alert("Bạn chưa nhập");
+	    		return;
+    		}
+
+				else if (txta.value == "" || isNaN(txta.value)) 
+			{
+	       		 alert("Nhập a sai, hãy nhập lại");
+	        		txta.focus();
+	        		return;
+   		 	} 		
+	    		else if (txtb.value == "" || isNaN(txtb.value)) 
+	    	{
+	        	alert("Nhập b sai, hãy nhập lại");
+	       	 	txtb.focus();
+	        	return;
+    		} 		
+	    		else if (txtc.value == "" || isNaN(txtc.value)) 
+	    	{
+	        	alert("Nhập c sai, hãy nhập lại");
+	        	txtc.focus();
+	        	return;
+    		}
 			var a= document.getElementById("txta").value;
 			var b= document.getElementById("txtb").value;
 			var c= document.getElementById("txtc").value;
