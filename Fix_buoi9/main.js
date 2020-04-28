@@ -6,19 +6,19 @@ function checkName(){
     if(!regexName.test(name)){
     	error_name.innerHTML = "(*)Họ tên không đúng định dạng!";
     }else{
-    	error_name.innerHTML = "";
+    	error_name.innerHTML = "(*)";
     	return name;
     }
 }
 function checkEmail(){
 	var email = document.getElementById('txtemail').value;
-	var error_email = document.getElementById('checkName');
+	var error_email = document.getElementById('checkEmail');
 	var regexEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm;
 	
 	 if(!regexEmail.test(email)){
 		error_email.innerHTML = "Email không đúng định dạng!";
 	}else{
-		error_email.innerHTML = "";
+		error_email.innerHTML = "(*)";
 		return email;
 	}
 }
@@ -35,7 +35,7 @@ function checkPhone()
 	else
 		{
 
-		error_phone.innerHTML = " ";
+		error_phone.innerHTML = "(*)";
 		return phone
 		}
 }
@@ -43,14 +43,14 @@ function checkPass() {
 var passWord = document.getElementById('txtpass').value;
 var error_pass = document.getElementById('checkPass');
 var regexPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-if(password.length<6)
+if(passWord.length<6)
 {
 	error_pass.innerHTML="Bạn phải nhập ít nhất 6 ký tự";
 }
 else if (!regexPass.test(passWord)) {
 error_pass.innerHTML = "Bạn phải nhập cả số cả chữ";
 }else{
-error_pass.innerHTML = "";
+error_pass.innerHTML = "(*)";
 }
 }
 function checkRepassword(){
@@ -60,10 +60,25 @@ var error_repass = document.getElementById('checkRepass');
 if (passWord != repass) {
 error_repass.innerHTML = "Mật khẩu không khớp !";
 }else{
-error_repass.innerHTML = "";
+error_repass.innerHTML = "(*)";
 }
+}
+function validate()
+{
+	if (checkName() && checkEmail() && checkPhone() && checkPass() && checkRepassword()) 
+		{
+			add();
+			edit(index);
+		}
+	else 
+	{
+
+	}
+
 }
 //them sinh viên
+
+
 var datalist=[];
 function add(){
 	//bat loi de trong ho ten
@@ -80,7 +95,7 @@ function add(){
 	var error_pass = document.getElementById('checkPass');
 	//
 	var repass = document.getElementById('txtrepass').value;
-var error_repass = document.getElementById('chechRepass');
+	var error_repass = document.getElementById('chechRepass');
 	if (name=="" || email==""||phone==""||passWord==""||repass=="") 
 	{
 		error_name.innerHTML="Bạn chưa nhập đủ thông tin !"
@@ -110,6 +125,7 @@ var error_repass = document.getElementById('chechRepass');
 	{
 		addtag(std);
 	}
+	
 	else
 	{
 		datalist[currIndex]=std;
@@ -137,8 +153,14 @@ datalist.push(std);
 		"<td>"+std.txtpass+"</td>"+
 		"<td>"+std.txtrepass+"</td>"+
 		"<td><input type='button' name='' value='Chọn' onclick='edit("+(datalist.length-1)+")'></td>"+
-		"<td><input type='button' name='' value='Xóa' onclick='delete("+(datalist.length-1)+")'></td>"+
+		"<td><input type='button' name='' value='Xóa' onclick='deleteID("+(datalist.length-1)+")'></td>"+
 		"</tr>";
+}
+
+function display()
+{
+	var ds = document.getElementById('tt');
+	ds.innerHTML='';
 }
 function displayAll()
 {
@@ -156,7 +178,7 @@ function displayAll()
 		"<td>"+std.txtpass+"</td>"+
 		"<td>"+std.txtrepass+"</td>"+
 		"<td><input type='button' name='' value='Chọn' onclick='edit("+i+")'></td>"+
-		"<td><input type='button' name='' value='Xóa' onclick='delete("+i+")'></td>"+
+		"<td><input type='button' name='' value='Xóa' onclick='deleteID("+i+")'></td>"+
 		"</tr>";
 	}
 

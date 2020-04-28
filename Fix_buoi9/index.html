@@ -61,42 +61,42 @@
 	<div class="container">
 		<div class="content">
 			<div class="content_left">
-				<form method="POST">
+				<form method="POST" onsubmit="return validate();" >
 					<table>
 						<tr>
 							<th colspan="2">Nhập thông tin đăng ký</th>
 						</tr>
 						
 						<tr>
-							<td class="check" colspan="2" id="checkName"><br></td>
+							<td class="check" colspan="2" id="checkName">(*)<br></td>
 						</tr>
 						<tr>
 							<td>Nhập họ tên</td>
 							<td><input type="text" name="fullname" id="txthoten" onblur="checkName()"></td>
 						</tr>
 						<tr>
-							<td class="check" colspan="2" id="checkSdt"><br></td>
+							<td class="check" colspan="2" id="checkSdt">(*)<br></td>
 						</tr>	
 						<tr>
 							<td>Nhập SDT</td>
 							<td><input type="text" name="sdt" id="txtsdt" onblur="checkPhone()"></td>
 						</tr>
 						<tr>
-							<td class="check" colspan="2" id="checkEmail"><br></td>
+							<td class="check" colspan="2" id="checkEmail">(*)<br></td>
 						</tr>
 						<tr>
 							<td>Nhập Email</td>
 							<td><input type="text" name="email" id="txtemail" onblur="checkEmail()"></td>
 						</tr>
 						<tr>
-							<td class="check" colspan="2" id="checkPass"><br></td>
+							<td class="check" colspan="2" id="checkPass">(*)<br></td>
 						</tr>
 						<tr>
 							<td>Nhập mật khẩu</td>
 							<td><input type="password" name="pass" id="txtpass" onblur="checkPass()"></td>
 						</tr>
 						<tr>
-							<td class="check" colspan="2" id="checkRepass"><br></td>
+							<td class="check" colspan="2" id="checkRepass">(*)<br></td>
 						</tr>
 						<tr>
 							<td>Nhập lại mật khẩu</td>
