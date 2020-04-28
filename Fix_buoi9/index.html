@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Thêm sửa xóa SV</title>
+	<style type="text/css">
+		*
+		{
+			margin: 0px ;
+			padding: 0px;
+		}
+		.container
+		{
+			
+			width: 1000px;
+			min-height: 500px;
+			box-sizing: border-box;
+		}
+		.content
+		{
+			margin: auto;
+			box-sizing: border-box;
+			background-color: #CCCBCB;
+			width: 80%;
+			margin-top: 20px;
+			min-height: 90%;
+			
+		}
+		.content_left
+		{
+			padding: 10px 0px 0px 60px;
+			box-sizing: border-box;
+			width: 50%;
+			min-height: 300px;
+			float: left;
+			border-right: 1px solid black;
+			
+		}
+		.content_right
+		{
+			padding: 15px 0px 0px 40px;
+			box-sizing: border-box;
+			width: 48%;
+			min-height: 300px;
+			float: right;
+			
+			
+		}
+		#clear_float
+		{
+			clear: both;
+		}
+		.check
+		{
+			color: red;
+			padding-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div class="content_left">
+				<form method="POST">
+					<table>
+						<tr>
+							<th colspan="2">Nhập thông tin đăng ký</th>
+						</tr>
+						
+						<tr>
+							<td class="check" colspan="2" id="checkName"><br></td>
+						</tr>
+						<tr>
+							<td>Nhập họ tên</td>
+							<td><input type="text" name="fullname" id="txthoten" onblur="checkName()"></td>
+						</tr>
+						<tr>
+							<td class="check" colspan="2" id="checkSdt"><br></td>
+						</tr>	
+						<tr>
+							<td>Nhập SDT</td>
+							<td><input type="text" name="sdt" id="txtsdt" onblur="checkPhone()"></td>
+						</tr>
+						<tr>
+							<td class="check" colspan="2" id="checkEmail"><br></td>
+						</tr>
+						<tr>
+							<td>Nhập Email</td>
+							<td><input type="text" name="email" id="txtemail" onblur="checkEmail()"></td>
+						</tr>
+						<tr>
+							<td class="check" colspan="2" id="checkPass"><br></td>
+						</tr>
+						<tr>
+							<td>Nhập mật khẩu</td>
+							<td><input type="text" name="pass" id="txtpass" onblur="checkPass()"></td>
+						</tr>
+						<tr>
+							<td class="check" colspan="2" id="checkRepass"><br></td>
+						</tr>
+						<tr>
+							<td>Nhập lại mật khẩu</td>
+							<td><input type="text" name="repass" id="txtrepass" onblur="checkRepassword()"></td>
+						</tr>
+						<tr><td><br></td></tr>
+						<tr>
+							<!-- <td><input type="button" name="" id="btnclick" onclick="add()" value="Đăng ký"></td>
+													 <td><input type="button" name="" id="btnupdate" onclick="add()" value="Update"></td>   -->
+							<td colspan="2"><button id="btnclick" type="button" value="ok" onclick="add()">Đăng ký</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="content_right">
+				<table border="1" style="border-collapse: collapse; width: 300px;min-height: 100px; text-align: center; font-size: 14px;">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Họ tên</th>
+							<th>SDT</th>
+							<th>Email</th>
+							<th>Mật khẩu</th>
+							<th>Xác nhận mật khẩu</th>
+							<th>Sửa</th>
+							<th>Xóa</th>
+
+						</tr>
+					</thead>
+					<tbody id="tt">
+						
+					</tbody>
+					
+				</table>
+				
+			</div>
+			<div id="clear_float"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
